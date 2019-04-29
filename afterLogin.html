@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="portal.css">
+  <style>
+      * {box-sizing: border-box;}
+
+/* Style the navbar */
+.topnav {
+  overflow: hidden;
+  background-color: #e9e9e9;
+}
+
+/* Navbar links */
+.topnav a {
+  float: left;
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+/* Navbar links on mouse-over */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Active/current link */
+.topnav a.active {
+  background-color: #2196F3;
+  color: white;
+}
+
+/* Style the input container */
+.topnav .login-container {
+  float: right;
+}
+
+/* Style the input field inside the navbar */
+.topnav input[type=text] {
+  padding: 6px;
+  margin-top: 8px;
+  font-size: 17px;
+  border: none;
+  width: 150px; /* adjust as needed (as long as it doesn't break the topnav) */
+}
+
+/* Style the button inside the input container */
+.topnav .login-container button {
+  float: right;
+  padding: 6px;
+  margin-top: 8px;
+  margin-right: 16px;
+  background: #ddd;
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+}
+.topnav .signup-container button {
+  float: right !important;
+  padding: 6px;
+  margin-top: 8px;
+  margin-right: 16px;
+  background: #ddd;
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+}
+.food-images{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.topnav .login-container button:hover {
+  background: #ccc;
+}
+
+/* Add responsiveness - On small screens, display the navbar vertically instead of horizontally */
+@media screen and (max-width: 600px) {
+  .topnav .login-container {
+    float: none;
+  }
+  .topnav a, .topnav input[type=text], .topnav .login-container button {
+    float: none;
+    display: block;
+    text-align: left;
+    width: 100%;
+    margin: 0;
+    padding: 14px;
+  }
+  .topnav input[type=text] {
+    border: 1px solid #ccc; 
+  }
+}
+.itemQuantityBtn {
+  border: none;
+  outline: none;
+  width: 30px;
+  background: turquoise;
+  color: #fff;
+  font-size: 18px;
+  border-radius: 20px;
+  margin: 10px;
+  display: inline-block;
+}
+
+.itemQuantityBtn:hover {
+  cursor: pointer;
+  background: red;
+  color: white;
+}
+/* Style inputs with type="text", select elements and textareas */
+input[type=text], select, textarea {
+  width: 100%; /* Full width */
+  padding: 12px; /* Some padding */  
+  border: 1px solid #ccc; /* Gray border */
+  border-radius: 4px; /* Rounded borders */
+  box-sizing: border-box; /* Make sure that padding and width stays in place */
+  margin-top: 6px; /* Add a top margin */
+  margin-bottom: 16px; /* Bottom margin */
+  resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
+}
+
+/* Style the submit button with a specific background color etc */
+input[type=submit] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* When moving the mouse over the submit button, add a darker green color */
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+/* Add a background color and some padding around the form */
+
+.contact-us {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+.contact-heading{
+    align-content: center !important;
+    color: black;
+    
+}
+.contact-labels {
+    color: black;
+}
+  </style>
+</head>
+<body>
+
+<div class="container-fluid">
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+        <div class="topnav">
+            <a class="active" href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="contact-us.html">Contact</a>
+            <!-- <div class="login-container">
+              <form action="/action_page.php">
+                <input type="text" placeholder="Username" name="username">
+                <input type="text" placeholder="Password" name="psw">
+                <button type="submit">Login</button>
+              </form>
+            </div> -->
+            <div class="signup-container">
+                    <form action="register.html">
+                      <button type="submit">Logout</button>
+                    </form>
+            </div>
+        </div>
+      </nav>
+</div>
+<div class="main">
+        <div class="col-md-6">
+           <div class="login-form">
+              <form>
+                 <div class="form-group">
+                    <label>Quantity</label>
+                    <input type="text" class="form-control" placeholder="Quntity" required>
+                 </div>
+                 <div class="form-group">
+                     <label>Service Method</label>
+                 <div class="radio">
+                        <label class="radio-inline"><input type="radio" name="optradio" checked>Delivery</label>
+                        <label class="radio-inline"><input type="radio" name="optradio">Carry Out</label>                      
+                </div>
+                </div>
+                <label>Would You like to add some more items </label>
+                <div class="form-group">
+                        <button  class="btn btn-secondary" formaction="afterCountinue.html">Yes</button>
+                  
+                </div>
+                <div class="form-group">
+                       <button  onclick= "validate()" class="btn btn-secondary" formaction="payment.html">NO</button> 
+                  
+                </div>
+                 
+                
+              </form>
+           </div>
+</div>
+
+
+ 
+
+</div>
+<script>
+        function validate(){
+            alert("your total amount is 24$");
+    }
+    </script>
+
+</body>
+</html>
